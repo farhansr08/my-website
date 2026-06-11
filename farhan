@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE htmi>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -43,6 +43,6 @@
         <p>Phone: <a href="tel:9847200616">9847200616</a></p>
         <p>GitHub: <a href="https://github.com/yourusername">GitHub Profile</a></p>
     </div>
-    
+
 </body>
 </html>
