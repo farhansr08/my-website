@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portugal 2026 Squad Reveal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(135deg,#006400,#001f0f);
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:'';
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle,
+rgba(255,215,0,.15),
+transparent 70%);
+animation:pulse 5s infinite;
+pointer-events:none;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.flag{
+width:220px;
+animation:zoomIn 2s ease;
+}
+
+.hero h1{
+font-size:70px;
+font-weight:800;
+margin-top:20px;
+animation:slideDown 1.5s ease;
+}
+
+.hero p{
+font-size:22px;
+color:#ddd;
+margin-top:10px;
+}
+
+.btn{
+margin-top:30px;
+padding:15px 40px;
+background:#ff0000;
+color:white;
+text-decoration:none;
+border-radius:50px;
+font-weight:700;
+transition:.4s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+}
+
+.section-title{
+text-align:center;
+font-size:50px;
+margin:50px 0;
+}
+
+.players{
+padding:20px 8% 80px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.player{
+position:relative;
+overflow:hidden;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+border-radius:25px;
+opacity:0;
+transform:
+translateY(120px)
+rotateX(45deg);
+}
+
+.player.show{
+animation:revealPlayer 1.2s forwards;
+}
+
+.player img{
+width:100%;
+height:420px;
+object-fit:cover;
+transition:.6s;
+}
+
+.player:hover img{
+transform:scale(1.08);
+}
+
+.player::before{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.25),
+transparent
+);
+transition:.8s;
+}
+
+.player:hover::before{
+left:100%;
+}
+
+.player h3{
+text-align:center;
+padding-top:15px;
+font-size:26px;
+color:#FFD700;
+}
+
+.player p{
+text-align:center;
+padding-bottom:20px;
+color:#ddd;
+}
+
+.player:hover{
+box-shadow:0 0 30px rgba(255,215,0,.6);
+}
+
+footer{
+background:black;
+padding:40px;
+text-align:center;
+}
+
+.jota{
+padding:20px 8% 80px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.jota{
+position:relative;
+overflow:hidden;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+border-radius:25px;
+opacity:0;
+transform:
+translateY(120px)
+rotateX(45deg);
+}
+
+.jota img{
+width:100%;
+height:420px;
+object-fit:cover;
+transition:.6s;
+}
+
+.jota:hover img{
+transform:scale(1.08);
+}
+
+.jota::before{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:
+linear-gradient(
+
+90deg,
+transparent,
+rgba(255,255,255,.25),
+transparent
+);
+transition:.8s;
+}
+
+.jota:hover::before{
+left:100%;
+}
+
+.jota h3{
+text-align:center;
+padding-top:15px;
+font-size:26px;
+color:#FFD700;
+}
+
+.jota p{
+text-align:center;
+padding-bottom:20px;
+color:#ddd;
+}
+
+.jota:hover{
+box-shadow:0 0 30px rgba(255,215,0,.6);
+}
+
+footer{
+background:black;
+padding:40px;
+text-align:center;
+}
+
+@keyframes zoomIn{
+from{transform:scale(0);}
+to{transform:scale(1);}
+}
+
+@keyframes slideDown{
+from{
+opacity:0;
+transform:translateY(-100px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes revealPlayer{
+0%{
+opacity:0;
+transform:
+translateY(120px)
+rotateX(45deg);
+}
+100%{
+opacity:1;
+transform:
+translateY(0)
+rotateX(0);
+}
+}
+
+@keyframes revealjota{
+0%{
+opacity:0;
+transform:
+translateY(120px)
+rotateX(45deg);
+}
+100%{
+opacity:1;
+transform:
+translateY(0)
+rotateX(0);
+}
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.3);}
+100%{transform:scale(1);}
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.flag{
+width:150px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+<img class="flag"
+src="https://flagcdn.com/w320/pt.png"
+alt="Portugal Flag">
+
+<h1>PORTUGAL 2026</h1>
+
+<p>Official World Cup Squad Reveal</p>
+
+<a href="#squad" class="btn">Reveal Squad</a>
+
+</section>
+
+<h2 class="section-title" id="squad">
+🇵🇹 PORTUGAL WORLD CUP 2026 SQUAD 🇵🇹
+</h2>
+
+<div class="players">
+
+<div class="player">
+<img src="ronaldo.jpeg">
+<h3>Cristiano Ronaldo</h3>
+<p>Captain • Forward</p>
+</div>
+
+<div class="player">
+<img src="bruno.jpeg">
+<h3>Bruno Fernandes</h3>
+<p>Midfielder</p>
+</div>
+
+<div class="player">
+<img src="bernardo.jpeg">
+<h3>Bernardo Silva</h3>
+<p>Midfielder</p>
+</div>
+
+<div class="player">
+<img src="leao.jpeg">
+<h3>Rafael Leão</h3>
+<p>Forward</p>
+</div>
+
+<div class="player">
+<img src="vitinha.jpeg">
+<h3>Vitinha</h3>
+<p>Midfielder</p>
+</div>
+
+<div class="player">
+<img src="rubendias.jpeg">
+<h3>Rúben Dias</h3>
+<p>Defender</p>
+</div>
+
+<div class="player">
+<img src="cancelo.jpeg">
+<h3>João Cancelo</h3>
+<p>Defender</p>
+</div>
+
+<div class="player">
+<img src="nunomendes.jpeg">
+<h3>Nuno Mendes</h3>
+<p>Defender</p>
+</div>
+
+<div class="player">
+<img src="diogocosta.jpeg">
+<h3>Diogo Costa</h3>
+<p>Goalkeeper</p>
+</div>
+
+<div class="player">
+<img src="joaofelix.jpeg">
+<h3>João Félix</h3>
+<p>Forward</p>
+</div>
+
+<div class="player">
+<img src="goncaloramos.jpeg">
+<h3>Gonçalo Ramos</h3>
+<p>Striker</p>
+</div>
+
+<div class="player">
+<img src="pedroneto.jpeg">
+<h3>Pedro Neto</h3>
+<p>Winger</p>
+</div>
+
+<div class="jota">
+
+<div class="jota">
+<img src="jota.jpeg">
+<h3>diogo jota</h3>
+<p>With loving memmories</p>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<h2>🇵🇹 Portugal World Cup 2026</h2>
+
+<p>Squad Reveal Experience for portugal fans</p>
+
+<p>Designed by Farhan sr</p>
+
+</footer>
+
+<script>
+
+const players =
+document.querySelectorAll('.player');
+
+const observer =
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+const index =
+[...players].indexOf(entry.target);
+
+setTimeout(()=>{
+
+entry.target.classList.add('show');
+
+},index*250);
+
+}
+
+});
+
+});
+
+players.forEach(player=>{
+observer.observe(player);
+});
+
+const jota =
+document.querySelectorAll('.jota');
+
+const observer =
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+const index =
+[...jota].indexOf(entry.target);
+
+setTimeout(()=>{
+
+entry.target.classList.add('show');
+
+},index*250);
+
+}
+
+});
+
+});
+
+jota.forEach(jota=>{
+observer.observe(jota);
+});
+
+</script>
+
+</body>
+</html>
